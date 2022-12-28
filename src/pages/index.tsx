@@ -8,6 +8,9 @@ import Missions from "./Missions";
 import Ships from "./Ships";
 import Dragons from "./Dragons";
 import History from "./History";
+import LandingPad from "./LandingPad";
+import Launches from "./Launches";
+import LaunchPad from "./LaunchPad";
 
 export {
   ErrorPage,
@@ -20,4 +23,7 @@ export {
   Ships,
   Dragons,
   History,
+  LandingPad,
+  Launches,
+  LaunchPad,
 };

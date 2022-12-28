@@ -16,6 +16,9 @@ import {
   History,
   Dragons,
   Ships,
+  LandingPad,
+  Launches,
+  LaunchPad
 } from "./pages";
 
 function App() {
@@ -36,6 +39,9 @@ function App() {
             <Route path="/rockets" element={<Rockets />} />
             <Route path="/rockets/:id" element={<DetailsTable />} />
             <Route path="/ships" element={<Ships />} />
+            <Route path="/landing-pads" element={<LandingPad />} />
+            <Route path="/launches" element={<Launches />} />
+            <Route path="/launch-pads" element={<LaunchPad />} />
 
             {/* undone */}
             {/* <Route path="/missions" element={<Missions />} /> */}

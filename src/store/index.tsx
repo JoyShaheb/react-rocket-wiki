@@ -31,6 +31,21 @@ import {
   useGetAllDragonsQuery,
   useGetOneDragonQuery,
 } from "./API/dragonsAPI";
+import {
+  landpadAPI,
+  useGetAllLandPadsQuery,
+  useGetOneLandPadQuery,
+} from "./API/landpadsAPI";
+import {
+  launchAPI,
+  useGetAllLaunchesQuery,
+  useGetOneLaunchQuery,
+} from "./API/launchesAPI";
+import {
+  launchPadAPI,
+  useGetAllLaunchPadsQuery,
+  useGetOneLaunchPadsQuery,
+} from "./API/launchPadAPI";
 
 export const store = configureStore({
   reducer: {
@@ -41,6 +56,9 @@ export const store = configureStore({
     [histroyAPI.reducerPath]: histroyAPI.reducer,
     [coresAPI.reducerPath]: coresAPI.reducer,
     [dragonsAPI.reducerPath]: dragonsAPI.reducer,
+    [landpadAPI.reducerPath]: landpadAPI.reducer,
+    [launchAPI.reducerPath]: launchAPI.reducer,
+    [launchPadAPI.reducerPath]: launchPadAPI.reducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware().concat(
@@ -49,7 +67,10 @@ export const store = configureStore({
       capsulesAPI.middleware,
       histroyAPI.middleware,
       coresAPI.middleware,
-      dragonsAPI.middleware
+      dragonsAPI.middleware,
+      landpadAPI.middleware,
+      launchAPI.middleware,
+      launchPadAPI.middleware
     );
   },
 });
@@ -70,4 +91,10 @@ export {
   useGetOneCoreQuery,
   useGetAllDragonsQuery,
   useGetOneDragonQuery,
+  useGetAllLandPadsQuery,
+  useGetOneLandPadQuery,
+  useGetAllLaunchesQuery,
+  useGetOneLaunchQuery,
+  useGetAllLaunchPadsQuery,
+  useGetOneLaunchPadsQuery,
 };

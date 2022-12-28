@@ -11,21 +11,23 @@
 
 ## refactor checklist
 
-* storybook
+- storybook
+
 - Home
 - Capsules ✅✅
 - cores ✅✅
 - dragons ✅✅
 - history ✅✅
-- info
-- landing-pads
-- launches
-- launch-pads
-- launches
-- launch-pads
-- payloads
+- landing-pads ✅✅
+<!-- - crew -->
+<!-- - launches -->
+<!-- - company -->
+<!-- - starlink -->
+<!-- - roadster ❌ -->
+<!-- - payloads ❌ -->
+- launch-pads ✅✅
 - rockets ✅✅
-- roadster
 - ships ✅✅
+-
 - Dynamic feature
 - Dark mode | light mode switch

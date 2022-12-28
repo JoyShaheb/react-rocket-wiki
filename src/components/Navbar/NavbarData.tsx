@@ -34,17 +34,13 @@ export const NavbarOptions = [
     icon: <BookmarksIcon />,
   },
   {
-    label: "info",
-    icon: <LightbulbIcon />,
-  },
-  {
     label: "landing-pads",
     icon: <GamesIcon />,
   },
-  {
-    label: "launches",
-    icon: <LaunchIcon />,
-  },
+  // {
+  //   label: "launches",
+  //   icon: <LaunchIcon />,
+  // },
   {
     label: "launch-pads",
     icon: <InboxIcon />,
