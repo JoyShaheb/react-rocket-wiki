@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { textLimit } from "../../utils/TextEdit";
 
 interface IMuiCardProps {
-  name: string;
-  image: string;
+  name?: string;
+  image?: string;
   description?: string;
   label?: string;
   pointer?: Boolean;
