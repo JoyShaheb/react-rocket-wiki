@@ -33,7 +33,10 @@ const MuiCard: FC<IMuiCardProps> = ({
       onClick={linkTo ? () => navigate(`/${linkTo}`) : () => {}}
       className={styles.cardParent}
       sx={{
+        display: "flex",
+        flexDirection: "column",
         cursor: pointer && "pointer",
+        height: "100%",
       }}
     >
       <CardMedia component="img" height="180" image={image ? image : noImg} />

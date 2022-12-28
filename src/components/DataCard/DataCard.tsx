@@ -14,7 +14,7 @@ interface IDataCardProps {
 const DataCard: FC<IDataCardProps> = ({ name, text, label }) => {
   return (
     <Card
-      sx={{ display: "flex", cursor: "pointer" }}
+      sx={{ display: "flex", cursor: "pointer", height:'100%' }}
       className={styles.cardParent}
     >
       <Box sx={{ display: "flex", flexDirection: "column" }}>

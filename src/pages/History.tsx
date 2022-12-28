@@ -1,32 +1,36 @@
-import { useEffect, useState } from "react";
-import { fetchData } from "../axios/axiosHttps";
-import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 import DataCard from "../components/DataCard/DataCard";
 import Title from "../components/Title/Title";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import dayjs from "dayjs";
+import { nanoid } from "@reduxjs/toolkit";
 import { Grid } from "@mui/material";
+import { useGetAllHistoriesQuery } from "../store";
+import LoadingState from "../components/States/LoadingState/LoadingState";
+import ErrorState from "../components/States/ErrorState/ErrorState";
+import NoDataState from "../components/States/NoDataState/NoDataState";
 
 const History = () => {
-  const [data, setData] = useState<any[]>([]);
-  useEffect(() => {
-    (async () => {
-      const fetch: any = await fetchData(`/history`);
-      setData(fetch?.data);
-      console.log(fetch?.data);
-    })();
-  }, []);
+  // @ts-ignore
+  const { data, isLoading, error } = useGetAllHistoriesQuery();
   return (
     <div className="">
       <Title label="History" icon={<BookmarksIcon fontSize="large" />} />
       <Grid container rowSpacing={2} columnSpacing={2}>
-        {data?.length === 0 ? (
-          <LoaderComponent />
-        ) : (
-          data?.map((x) => {
+        <LoadingState isLoading={isLoading} error={error} skeletonCount={8} />
+        <ErrorState isLoading={isLoading} error={error} />
+        <NoDataState
+          isLoading={isLoading}
+          error={error}
+          dataLength={data?.length}
+        />
+
+        {!isLoading &&
+          !error &&
+          data?.length > 0 &&
+          data?.map((x: any) => {
             const { id, details, title, event_date_utc } = x || [];
             return (
-              <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+              <Grid key={nanoid()} item xs={12} sm={6} md={4} lg={3} xl={2}>
                 <DataCard
                   key={id}
                   label={dayjs(event_date_utc).format("DD MMM, YYYY")}
@@ -35,8 +39,7 @@ const History = () => {
                 />
               </Grid>
             );
-          })
-        )}
+          })}
       </Grid>
     </div>
   );
