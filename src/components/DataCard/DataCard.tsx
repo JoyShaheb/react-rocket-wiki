@@ -10,12 +10,14 @@ interface IDataCardProps {
   name: string;
   text: string;
   label?: string;
+  onClick?: () => void;
 }
-const DataCard: FC<IDataCardProps> = ({ name, text, label }) => {
+const DataCard: FC<IDataCardProps> = ({ name, text, label, onClick }) => {
   return (
     <Card
-      sx={{ display: "flex", cursor: "pointer", height:'100%' }}
+      sx={{ display: "flex", cursor: "pointer", height: "100%" }}
       className={styles.cardParent}
+      onClick={onClick}
     >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>

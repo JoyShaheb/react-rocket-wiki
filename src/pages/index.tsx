@@ -3,7 +3,8 @@ import ErrorPage from "./ErrorPage";
 import Cores from "./Cores/Cores";
 import Info from "./Info";
 import Rockets from "./Rockets/Rockets";
-import Capsules from "./Capsule.tsx/Capsules";
+import Capsules from "./Capsule/Capsules";
+import CapsuleDetails from "./Capsule/CapsuleDetails";
 import Missions from "./Missions";
 import Ships from "./Ships/Ships";
 import Dragons from "./Dragons/Dragons";
@@ -16,6 +17,7 @@ export {
   ErrorPage,
   Home,
   Capsules,
+  CapsuleDetails,
   Cores,
   Info,
   Rockets,

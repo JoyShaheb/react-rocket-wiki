@@ -8,11 +8,13 @@ import LoadingState from "../../components/States/LoadingState/LoadingState";
 import ErrorState from "../../components/States/ErrorState/ErrorState";
 import NoDataState from "../../components/States/NoDataState/NoDataState";
 import { Progress } from "../../components/NProgress/ProgressBar";
+import { useNavigate } from "react-router-dom";
 
 const Capsules = () => {
   // @ts-ignore
   const { data, isLoading, error, isFetching } = useGetAllCapsulesQuery();
   Progress(isFetching);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -38,6 +40,7 @@ const Capsules = () => {
                   key={id}
                   label={type}
                   name={serial}
+                  onClick={() => navigate(`/capsules/${id}`)}
                 />
               </Grid>
             );

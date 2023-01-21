@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DetailsTable from "./components/DetailsTable/DetailsTable";
 // import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/material";
@@ -20,6 +19,7 @@ import {
   Launches,
   LaunchPad
 } from "./pages";
+import CapsuleDetails from "./pages/Capsule/CapsuleDetails";
 
 function App() {
   const themeState = useSelector((state: any) => state.uiSettings.theme);
@@ -32,12 +32,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/capsules" element={<Capsules />} />
+            <Route path="/capsules/:id" element={<CapsuleDetails />} />
             <Route path="/cores" element={<Cores />} />
             <Route path="/dragons" element={<Dragons />} />
             <Route path="/history" element={<History />} />
 
             <Route path="/rockets" element={<Rockets />} />
-            <Route path="/rockets/:id" element={<DetailsTable />} />
             <Route path="/ships" element={<Ships />} />
             <Route path="/landing-pads" element={<LandingPad />} />
             <Route path="/launches" element={<Launches />} />
