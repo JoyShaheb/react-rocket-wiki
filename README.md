@@ -8,6 +8,7 @@
 - npm install @mui/material @emotion/react @emotion/styled
 - npm install @mui/icons-material
 - npm install @reduxjs/toolkit react-redux
+- npm i nprogress --save-dev @types/nprogress
 
 ## refactor checklist
 
@@ -19,15 +20,15 @@
 - dragons ✅✅
 - history ✅✅
 - landing-pads ✅✅
+- launch-pads ✅✅
+<!-- - payloads ❌ -->
+- rockets ✅✅
+- ships ✅✅
+<!-- - roadster ❌ -->
 <!-- - crew -->
 <!-- - launches -->
 <!-- - company -->
 <!-- - starlink -->
-<!-- - roadster ❌ -->
-<!-- - payloads ❌ -->
-- launch-pads ✅✅
-- rockets ✅✅
-- ships ✅✅
 -
 - Dynamic feature
 - Dark mode | light mode switch

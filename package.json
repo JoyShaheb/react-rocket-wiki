@@ -21,6 +21,7 @@
     "bootstrap-icons": "^1.9.1",
     "dayjs": "^1.11.6",
     "dracula-ui": "^1.0.3",
+    "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -77,6 +78,7 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
+    "@types/nprogress": "^0.2.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0"

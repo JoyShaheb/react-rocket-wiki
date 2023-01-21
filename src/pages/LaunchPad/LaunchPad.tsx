@@ -1,18 +1,20 @@
 import React from "react";
-import MuiCard from "../components/MuiCard/MuiCard";
+import MuiCard from "../../components/MuiCard/MuiCard";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import { Grid } from "@mui/material";
 import { nanoid } from "@reduxjs/toolkit";
-import Title from "../components/Title/Title";
-import { useGetAllLaunchPadsQuery } from "../store";
-import LoadingState from "../components/States/LoadingState/LoadingState";
-import ErrorState from "../components/States/ErrorState/ErrorState";
-import NoDataState from "../components/States/NoDataState/NoDataState";
+import Title from "../../components/Title/Title";
+import { useGetAllLaunchPadsQuery } from "../../store";
+import LoadingState from "../../components/States/LoadingState/LoadingState";
+import ErrorState from "../../components/States/ErrorState/ErrorState";
+import NoDataState from "../../components/States/NoDataState/NoDataState";
+import { Progress } from "../../components/NProgress/ProgressBar";
 
 const LaunchPad = () => {
   // @ts-ignore
-  const { data, isLoading, error } = useGetAllLaunchPadsQuery();
-  console.log(data);
+  const { data, isLoading, error, isFetching } = useGetAllLaunchPadsQuery();
+  Progress(isFetching);
+
   return (
     <div className="">
       <Title label="Launch Pads" icon={<InboxIcon fontSize="large" />} />

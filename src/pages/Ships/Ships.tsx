@@ -1,16 +1,18 @@
-import MuiCard from "../components/MuiCard/MuiCard";
-import Title from "../components/Title/Title";
+import MuiCard from "../../components/MuiCard/MuiCard";
+import Title from "../../components/Title/Title";
 import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
 import { Grid } from "@mui/material";
-import { useGetAllShipsQuery } from "../store";
+import { useGetAllShipsQuery } from "../../store";
 import { nanoid } from "@reduxjs/toolkit";
-import LoadingState from "../components/States/LoadingState/LoadingState";
-import ErrorState from "../components/States/ErrorState/ErrorState";
-import NoDataState from "../components/States/NoDataState/NoDataState";
+import LoadingState from "../../components/States/LoadingState/LoadingState";
+import ErrorState from "../../components/States/ErrorState/ErrorState";
+import NoDataState from "../../components/States/NoDataState/NoDataState";
+import { Progress } from "../../components/NProgress/ProgressBar";
 
 const Ships = () => {
   // @ts-ignore
-  const { data, isLoading, error } = useGetAllShipsQuery();
+  const { data, isLoading, error, isFetching } = useGetAllShipsQuery();
+  Progress(isFetching);
 
   return (
     <div>

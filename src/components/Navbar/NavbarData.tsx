@@ -15,54 +15,54 @@ import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 export const NavbarOptions = [
   {
     label: "Home",
-    icon: <HomeIcon />,
+    icon: <HomeIcon fontSize="small" />,
   },
   {
     label: "capsules",
-    icon: <CatchingPokemonIcon />,
+    icon: <CatchingPokemonIcon fontSize="small" />,
   },
   {
     label: "cores",
-    icon: <HubIcon />,
+    icon: <HubIcon fontSize="small" />,
   },
   {
     label: "dragons",
-    icon: <DiamondIcon />,
+    icon: <DiamondIcon fontSize="small" />,
   },
   {
     label: "history",
-    icon: <BookmarksIcon />,
+    icon: <BookmarksIcon fontSize="small" />,
   },
   {
     label: "landing-pads",
-    icon: <GamesIcon />,
+    icon: <GamesIcon fontSize="small" />,
   },
   // {
   //   label: "launches",
-  //   icon: <LaunchIcon />,
+  //   icon: <LaunchIcon fontSize="small"/>,
   // },
   {
     label: "launch-pads",
-    icon: <InboxIcon />,
+    icon: <InboxIcon fontSize="small" />,
   },
   // {
   //   label: "missions",
-  //   icon: <TerrainIcon />,
+  //   icon: <TerrainIcon fontSize="small"/>,
   // },
   {
     label: "payloads",
-    icon: <InboxIcon />,
+    icon: <InboxIcon fontSize="small" />,
   },
   {
     label: "rockets",
-    icon: <RocketLaunchIcon />,
+    icon: <RocketLaunchIcon fontSize="small" />,
   },
   {
     label: "roadster",
-    icon: <TimeToLeaveIcon />,
+    icon: <TimeToLeaveIcon fontSize="small" />,
   },
   {
     label: "ships",
-    icon: <DirectionsBoatIcon />,
+    icon: <DirectionsBoatIcon fontSize="small" />,
   },
 ];

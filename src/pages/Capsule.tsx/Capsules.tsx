@@ -1,17 +1,19 @@
-import React from "react";
-import DataCard from "../components/DataCard/DataCard";
-import Title from "../components/Title/Title";
+import DataCard from "../../components/DataCard/DataCard";
+import Title from "../../components/Title/Title";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import { Grid } from "@mui/material";
 import { nanoid } from "@reduxjs/toolkit";
-import { useGetAllCapsulesQuery } from "../store";
-import LoadingState from "../components/States/LoadingState/LoadingState";
-import ErrorState from "../components/States/ErrorState/ErrorState";
-import NoDataState from "../components/States/NoDataState/NoDataState";
+import { useGetAllCapsulesQuery } from "../../store";
+import LoadingState from "../../components/States/LoadingState/LoadingState";
+import ErrorState from "../../components/States/ErrorState/ErrorState";
+import NoDataState from "../../components/States/NoDataState/NoDataState";
+import { Progress } from "../../components/NProgress/ProgressBar";
 
 const Capsules = () => {
   // @ts-ignore
-  const { data, isLoading, error } = useGetAllCapsulesQuery();
+  const { data, isLoading, error, isFetching } = useGetAllCapsulesQuery();
+  Progress(isFetching);
+
   return (
     <div>
       <Title label="Capsules" icon={<CatchingPokemonIcon fontSize="large" />} />

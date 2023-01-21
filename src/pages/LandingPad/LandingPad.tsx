@@ -1,18 +1,18 @@
-import React from 'react'
-import { useGetAllLandPadsQuery } from '../store'
-import Title from "../components/Title/Title";
+import { useGetAllLandPadsQuery } from '../../store'
+import Title from "../../components/Title/Title";
 import GamesIcon from "@mui/icons-material/Games";
 import { Grid } from "@mui/material";
 import { nanoid } from "@reduxjs/toolkit";
-import MuiCard from "../components/MuiCard/MuiCard";
-import LoadingState from "../components/States/LoadingState/LoadingState";
-import ErrorState from "../components/States/ErrorState/ErrorState";
-import NoDataState from "../components/States/NoDataState/NoDataState";
+import MuiCard from "../../components/MuiCard/MuiCard";
+import LoadingState from "../../components/States/LoadingState/LoadingState";
+import ErrorState from "../../components/States/ErrorState/ErrorState";
+import NoDataState from "../../components/States/NoDataState/NoDataState";
+import { Progress } from "../../components/NProgress/ProgressBar";
 
 const LandingPad = () => {
   // @ts-ignore
-  const { data, error, isLoading } = useGetAllLandPadsQuery()
-  console.log(data)
+  const { data, error, isLoading, isFetching } = useGetAllLandPadsQuery()
+  Progress(isFetching);
 
   return (
     <div className="">

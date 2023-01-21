@@ -1,17 +1,20 @@
 import React from "react";
-import DataCard from "../components/DataCard/DataCard";
+import DataCard from "../../components/DataCard/DataCard";
 import HubIcon from "@mui/icons-material/Hub";
-import Title from "../components/Title/Title";
+import Title from "../../components/Title/Title";
 import { Grid } from "@mui/material";
 import { nanoid } from "@reduxjs/toolkit";
-import LoadingState from "../components/States/LoadingState/LoadingState";
-import ErrorState from "../components/States/ErrorState/ErrorState";
-import NoDataState from "../components/States/NoDataState/NoDataState";
-import { useGetAllCapsulesQuery } from "../store";
+import LoadingState from "../../components/States/LoadingState/LoadingState";
+import ErrorState from "../../components/States/ErrorState/ErrorState";
+import NoDataState from "../../components/States/NoDataState/NoDataState";
+import { useGetAllCapsulesQuery } from "../../store";
+import { Progress } from "../../components/NProgress/ProgressBar";
 
 const Cores = () => {
   // @ts-ignore
-  const { data, isLoading, error } = useGetAllCapsulesQuery();
+  const { data, isLoading, error, isFetching } = useGetAllCapsulesQuery();
+  Progress(isFetching);
+
   return (
     <div>
       <Title label="Cores" icon={<HubIcon fontSize="large" />} />

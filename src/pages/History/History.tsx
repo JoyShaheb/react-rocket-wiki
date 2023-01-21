@@ -1,17 +1,20 @@
-import DataCard from "../components/DataCard/DataCard";
-import Title from "../components/Title/Title";
+import DataCard from "../../components/DataCard/DataCard";
+import Title from "../../components/Title/Title";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import dayjs from "dayjs";
 import { nanoid } from "@reduxjs/toolkit";
 import { Grid } from "@mui/material";
-import { useGetAllHistoriesQuery } from "../store";
-import LoadingState from "../components/States/LoadingState/LoadingState";
-import ErrorState from "../components/States/ErrorState/ErrorState";
-import NoDataState from "../components/States/NoDataState/NoDataState";
+import { useGetAllHistoriesQuery } from "../../store";
+import LoadingState from "../../components/States/LoadingState/LoadingState";
+import ErrorState from "../../components/States/ErrorState/ErrorState";
+import NoDataState from "../../components/States/NoDataState/NoDataState";
+import { Progress } from "../../components/NProgress/ProgressBar";
 
 const History = () => {
   // @ts-ignore
-  const { data, isLoading, error } = useGetAllHistoriesQuery();
+  const { data, isLoading, error, isFetching } = useGetAllHistoriesQuery();
+  Progress(isFetching);
+
   return (
     <div className="">
       <Title label="History" icon={<BookmarksIcon fontSize="large" />} />
