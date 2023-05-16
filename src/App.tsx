@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, ErrorPage } from "./pages";
+import { Home, ErrorPage, Capsules } from "./pages";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import { CssBaseline } from "@mui/material";
@@ -16,6 +16,7 @@ const App = () => {
         <Navbar>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/capsules" element={<Capsules />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Navbar>
