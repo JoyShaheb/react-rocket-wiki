@@ -5,6 +5,7 @@ import { theme } from "./theme";
 import { CssBaseline } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   const uiTheme = useSelector((store: RootState) => store.system.mode);
@@ -12,10 +13,12 @@ const App = () => {
     <ThemeProvider theme={theme(uiTheme)}>
       <CssBaseline />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+        <Navbar>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </Navbar>
       </BrowserRouter>
     </ThemeProvider>
   );
