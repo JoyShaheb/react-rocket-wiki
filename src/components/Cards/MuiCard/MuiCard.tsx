@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { CardMedia, CardContent, Card, Typography } from "@mui/material";
-// import styles from "./MuiCard.module.scss";
+import { CardMedia, CardContent, Card, Typography, Chip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { textLimit } from "../../../utils/TextEdit";
 
@@ -9,7 +8,6 @@ interface IMuiCardProps {
   image?: string;
   description?: string;
   label?: string;
-  pointer?: boolean;
   linkTo?: string;
 }
 
@@ -22,7 +20,6 @@ const MuiCard: FC<IMuiCardProps> = ({
   image,
   description,
   label,
-  pointer,
 }) => {
   const navigate = useNavigate();
   return (
@@ -30,12 +27,12 @@ const MuiCard: FC<IMuiCardProps> = ({
       onClick={
         linkTo ? () => navigate(`/${linkTo}`) : () => console.log("hello")
       }
-      // className={styles.cardParent}
       sx={{
         display: "flex",
         flexDirection: "column",
-        // cursor: pointer && "pointer",
+        cursor: "pointer",
         height: "100%",
+        position: "relative",
       }}
     >
       <CardMedia component="img" height="180" image={image ? image : noImg} />
@@ -48,12 +45,16 @@ const MuiCard: FC<IMuiCardProps> = ({
         </Typography>
       </CardContent>
       {label && (
-        <Typography
-          // className={styles.labelBtn}
-          variant="subtitle2"
-        >
-          {label}
-        </Typography>
+        <Chip
+          label={label}
+          color="success"
+          size="small"
+          sx={{
+            position: "absolute",
+            top: 10,
+            right: 10,
+          }}
+        />
       )}
     </Card>
   );

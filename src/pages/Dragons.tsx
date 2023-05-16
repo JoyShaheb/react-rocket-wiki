@@ -6,10 +6,12 @@ import Title from "../components/Title/Title";
 import { Grid } from "@mui/material";
 import { IDragon } from "../types/dragon.interface";
 import { nanoid } from "nanoid";
+import MuiCard from "../components/Cards/MuiCard/MuiCard";
 
 const Dragons = () => {
-  const { data, isLoading, isFetching, isError, error } =
+  const { data, isLoading, isFetching, error } =
     useGetAllDragonsQuery(undefined);
+
   ProgressBar(isFetching || isLoading);
 
   console.log(data);
@@ -25,7 +27,6 @@ const Dragons = () => {
           isFetching={isFetching}
         />
 
-        {/* 
         {!isLoading &&
           !error &&
           (data?.length as number) > 0 &&
@@ -42,7 +43,7 @@ const Dragons = () => {
                 />
               </Grid>
             );
-          })} */}
+          })}
       </Grid>
     </div>
   );
