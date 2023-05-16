@@ -16,7 +16,6 @@ const Capsules = () => {
       // pollingInterval: 5000,
     });
 
-  console.log(data);
   ProgressBar(isFetching || isLoading);
   return (
     <div>
