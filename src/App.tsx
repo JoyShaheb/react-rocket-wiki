@@ -1,58 +1,35 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import { ThemeProvider } from "@mui/material";
-import { theme } from "./theme";
-import { CssBaseline } from "@mui/material";
-import { useSelector } from "react-redux";
-import {
-  Home,
-  ErrorPage,
-  Rockets,
-  Capsules,
-  Cores,
-  Missions,
-  History,
-  Dragons,
-  Ships,
-  LandingPad,
-  Launches,
-  LaunchPad
-} from "./pages";
-import CapsuleDetails from "./pages/Capsule/CapsuleDetails";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-  const themeState = useSelector((state: any) => state.uiSettings.theme);
+  const [count, setCount] = useState(0)
+
   return (
-    <ThemeProvider theme={theme(themeState)}>
-      <CssBaseline />
-      <Router>
-        <Navbar>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/capsules" element={<Capsules />} />
-            <Route path="/capsules/:id" element={<CapsuleDetails />} />
-            <Route path="/cores" element={<Cores />} />
-            <Route path="/dragons" element={<Dragons />} />
-            <Route path="/history" element={<History />} />
-
-            <Route path="/rockets" element={<Rockets />} />
-            <Route path="/ships" element={<Ships />} />
-            <Route path="/landing-pads" element={<LandingPad />} />
-            <Route path="/launches" element={<Launches />} />
-            <Route path="/launch-pads" element={<LaunchPad />} />
-
-            {/* undone */}
-            {/* <Route path="/missions" element={<Missions />} /> */}
-
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-          {/* <Footer /> */}
-        </Navbar>
-      </Router>
-    </ThemeProvider>
-  );
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default App;
+export default App
