@@ -9,3 +9,8 @@ export interface iErrorState {
   error: FetchBaseQueryError | SerializedError | undefined;
   isFetching?: boolean;
 }
+
+export interface iNavbarOptions {
+  label: string;
+  icon: JSX.Element | JSX.Element[];
+}

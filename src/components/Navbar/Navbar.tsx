@@ -1,5 +1,6 @@
 import * as React from "react";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { nanoid } from "nanoid";
 import {
   Box,
   IconButton,
@@ -20,12 +21,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useNavigate } from "react-router-dom";
-// import { NavbarOptions } from "./NavbarData";
+import { NavbarOptions } from "./NavbarData";
 import { SwitchProps } from "@mui/material/Switch";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, themeSwitch } from "../../store";
 import { MaterialUISwitch } from "./MaterialUISwitch";
 import { MuiThemeEnums } from "../../types/enums";
+import { iNavbarOptions } from "../../types/types";
 
 const drawerWidth = 240;
 
@@ -185,11 +187,10 @@ export default function Navbar({ children }: INavbarProps) {
         </DrawerHeader>
         <Divider />
         <List>
-          hello
-          {/* {NavbarOptions.map((item, index) => (
+          {NavbarOptions.map((item: iNavbarOptions) => (
             <ListItem
               onClick={() => navigate(`/${item.label}`)}
-              key={item.label}
+              key={nanoid()}
               disablePadding
               sx={{ display: "block" }}
             >
@@ -216,7 +217,7 @@ export default function Navbar({ children }: INavbarProps) {
                 />
               </ListItemButton>
             </ListItem>
-          ))} */}
+          ))}
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
