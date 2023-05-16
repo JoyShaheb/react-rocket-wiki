@@ -4,7 +4,7 @@ import { Grid } from "@mui/material";
 import { States } from "../components/States";
 import { useGetAllCoresQuery } from "../store";
 import DataCard from "../components/Cards/DataCard/DataCard";
-import { ICores } from "../types/cores.interface";
+import { ICores } from "../types/interface";
 import { nanoid } from "nanoid";
 import { ProgressBar } from "../components/NProgress/ProgressBar";
 

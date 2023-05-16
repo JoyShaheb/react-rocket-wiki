@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ICores } from "../../types/cores.interface";
+import { ICores } from "../../types/interface";
 
 export const CoresAPI = createApi({
   reducerPath: "CoresAPI",

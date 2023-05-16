@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IHistory } from "../../types/history.interface";
+import { IHistory } from "../../types/interface";
 
 export const HistoryAPI = createApi({
   reducerPath: "HistoryAPI",

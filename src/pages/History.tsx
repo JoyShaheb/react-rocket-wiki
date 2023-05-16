@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 import { ProgressBar } from "../components/NProgress/ProgressBar";
 import { useGetAllHistoriesQuery } from "../store";
 import dayjs from "dayjs";
-import { IHistory } from "../types/history.interface";
+import { IHistory } from "../types/interface";
 
 const History = () => {
   const { data, isFetching, isLoading, error } =
