@@ -2,7 +2,7 @@ import { useGetAllCapsulesQuery } from "../store";
 import { Grid } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ICapsule } from "../types/capsules.interface";
-import DataCard from "../components/DataCard/DataCard";
+import DataCard from "../components/Cards/DataCard/DataCard";
 import Title from "../components/Title/Title";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import { useNavigate } from "react-router-dom";

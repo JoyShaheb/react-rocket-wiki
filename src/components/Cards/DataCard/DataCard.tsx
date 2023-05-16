@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Chip, Typography, Card, Box, CardContent } from "@mui/material";
-import { textLimit } from "../../utils/TextEdit";
+import { textLimit } from "../../../utils/TextEdit";
 
 interface IDataCardProps {
   name: string;
