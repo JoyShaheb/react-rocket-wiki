@@ -6,6 +6,7 @@ import DataCard from "../components/DataCard/DataCard";
 import Title from "../components/Title/Title";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import { useNavigate } from "react-router-dom";
+import { ProgressBar } from "../components/NProgress/ProgressBar";
 
 const Capsules = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Capsules = () => {
     });
 
   console.log(data);
+  ProgressBar(isFetching || isLoading);
   return (
     <div>
       <Title label="Capsules" icon={<CatchingPokemonIcon fontSize="large" />} />
