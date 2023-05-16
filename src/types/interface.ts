@@ -1,3 +1,7 @@
+// export interface Common{
+
+// }
+
 export interface ICapsule {
   reuse_count: number;
   water_landings: number;
@@ -23,7 +27,6 @@ export interface ICores {
   serial: string;
   status: string;
 }
-
 
 export interface IHistory {
   links: {
