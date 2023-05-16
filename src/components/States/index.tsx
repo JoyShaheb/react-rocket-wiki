@@ -1,6 +1,6 @@
 import ErrorState from "./ErrorState";
 import LoadingState from "./LoadingState";
 import NoDataState from "./NoDataState";
-import State from "./State";
+import States from "./States";
 
-export { ErrorState, LoadingState, NoDataState, State };
+export { ErrorState, LoadingState, NoDataState, States };

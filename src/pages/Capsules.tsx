@@ -7,7 +7,7 @@ import Title from "../components/Title/Title";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import { useNavigate } from "react-router-dom";
 import { ProgressBar } from "../components/NProgress/ProgressBar";
-import { State } from "../components/States";
+import { States } from "../components/States";
 
 const Capsules = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Capsules = () => {
     <div>
       <Title label="Capsules" icon={<CatchingPokemonIcon fontSize="large" />} />
       <Grid container rowSpacing={2} columnSpacing={2}>
-        <State
+        <States
           dataLength={data?.length as number}
           error={error}
           isLoading={isLoading}

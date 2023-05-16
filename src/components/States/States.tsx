@@ -2,12 +2,12 @@ import { FC } from "react";
 import { ErrorState, LoadingState, NoDataState } from ".";
 import { iErrorState } from "../../types/types";
 
-interface IStateProps extends iErrorState {
+interface IStatesProps extends iErrorState {
   dataLength: number;
   skeletonCount: number;
 }
 
-const State: FC<IStateProps> = ({
+const States: FC<IStatesProps> = ({
   error,
   isLoading,
   dataLength,
@@ -30,4 +30,4 @@ const State: FC<IStateProps> = ({
   );
 };
 
-export default State;
+export default States;
